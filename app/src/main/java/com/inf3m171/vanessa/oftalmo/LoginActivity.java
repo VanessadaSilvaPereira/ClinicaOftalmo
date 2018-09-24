@@ -3,7 +3,7 @@ package com.inf3m171.vanessa.oftalmo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class OftalmoActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
