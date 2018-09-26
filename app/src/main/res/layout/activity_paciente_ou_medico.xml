@@ -7,7 +7,7 @@
     tools:context="com.inf3m171.vanessa.oftalmo.paciente_ou_medicoActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnPaciente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -15,7 +15,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Paciente"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/btnMedico"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.581" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnMedico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="184dp"
