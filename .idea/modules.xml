@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Oftalmo.iml" filepath="$PROJECT_DIR$/Oftalmo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ClinicaOftalmo.iml" filepath="$PROJECT_DIR$/ClinicaOftalmo.iml" />
+      <module fileurl="file://C:\Users\android\Documents\ClinicaOftalmo\Oftalmo.iml" filepath="C:\Users\android\Documents\ClinicaOftalmo\Oftalmo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
