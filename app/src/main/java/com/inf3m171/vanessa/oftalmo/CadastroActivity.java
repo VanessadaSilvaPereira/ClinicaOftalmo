@@ -100,6 +100,11 @@ public class CadastroActivity extends AppCompatActivity {
         }
     }
 
+
+
+
+
+
     private void criarMedico(){
         String senha = etSenha.getText().toString();
         String confirma = etConfirma.getText().toString();
