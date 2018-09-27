@@ -1,10 +1,9 @@
 package com.inf3m171.vanessa.oftalmo;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,7 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -22,7 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private String tipo;
     private EditText etLogin, etSenha;
     private Button btnEntrar, btnCadastro;
-    private FirebaseAuth autenticação;
+    private FirebaseAuth autenticacao;
     private FirebaseAuth.AuthStateListener stateListener;
 
     @Override
@@ -36,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnCadastro = (Button) findViewById(R.id.btnCadastro);
 
-        autenticação = FirebaseAuth.getInstance();
+        autenticacao = FirebaseAuth.getInstance();
 
 
         tipo = getIntent().getStringExtra("tipo");
@@ -52,16 +50,38 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnEntrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                entrar();
+            }
+        });
+        entrar();
 
 
         }
+
+
+    //@Override
+   // protected void onStart() {
+       // super.onStart();
+       // autenticacao.addAuthStateListener(stateListener);
+  //  }
+
+   // @Override
+   // protected void onStop() {
+       // super.onStop();
+       // if (stateListener != null){
+            //autenticacao.removeAuthStateListener(stateListener);
+        //}
+   // }
 
 
     private void entrar(){
         String email = etLogin.getText().toString();
         String senha = etSenha.getText().toString();
         if(!email.isEmpty())
-            autenticação.signInWithEmailAndPassword(email,senha)
+            autenticacao.signInWithEmailAndPassword(email,senha)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
