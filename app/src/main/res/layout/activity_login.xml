@@ -6,14 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.inf3m171.vanessa.oftalmo.LoginActivity">
 
+
     <Button
-        android:id="@+id/btnCadastro"
+        android:id="@+id/BtnCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="88dp"
         android:text="Cadastre-se"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -51,10 +53,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="84dp"
         android:text="Entrar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnCadastro"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toEndOf="@+id/BtnCadastro"
         app:layout_constraintTop_toBottomOf="@+id/etSenha" />
+
+
 
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,14 +33,14 @@ public class LoginActivity extends AppCompatActivity {
         etSenha = (EditText) findViewById(R.id.etSenha);
 
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
-        btnCadastro = (Button) findViewById(R.id.btnCadastro);
+        btnCadastro = (Button) findViewById(R.id.BtnCadastro);
 
         autenticacao = FirebaseAuth.getInstance();
 
 
         tipo = getIntent().getStringExtra("tipo");
 
-        Button btnCadastro = (Button) findViewById(R.id.btnCadastro);
+        Button btnCadastro = (Button) findViewById(R.id.BtnCadastro);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -50,31 +51,49 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+
+
+        stateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+               FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user != null){
+                    Intent i = new Intent( LoginActivity.this, ListaActivity.class);
+                    startActivity(i);
+                }
+            }
+        };
+
+
+        Button getBtnEntrar = (Button) findViewById(R.id.btnEntrar);
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 entrar();
+                Intent it = new Intent(LoginActivity.this, ListaActivity.class);
+                startActivity(it);
             }
         });
-        entrar();
 
 
-        }
+
+    }
+
 
 
     //@Override
-   // protected void onStart() {
-       // super.onStart();
-       // autenticacao.addAuthStateListener(stateListener);
-  //  }
+    // protected void onStart() {
+    // super.onStart();
+    // autenticacao.addAuthStateListener(stateListener);
+    //  }
 
-   // @Override
-   // protected void onStop() {
-       // super.onStop();
-       // if (stateListener != null){
-            //autenticacao.removeAuthStateListener(stateListener);
-        //}
-   // }
+    // @Override
+    // protected void onStop() {
+    // super.onStop();
+    // if (stateListener != null){
+    //autenticacao.removeAuthStateListener(stateListener);
+    //}
+    // }
 
 
     private void entrar(){
@@ -87,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Usuário ou senha inválidos!", Toast.LENGTH_LONG).show();
+
                             }
                         }
                     });
