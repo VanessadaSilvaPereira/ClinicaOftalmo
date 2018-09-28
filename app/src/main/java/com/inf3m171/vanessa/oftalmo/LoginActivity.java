@@ -65,24 +65,27 @@ public class LoginActivity extends AppCompatActivity {
     //@Override
    // protected void onStart() {
        // super.onStart();
-       // autenticacao.addAuthStateListener(stateListener);
-  //  }
-
+        //autenticacao.addAuthStateListener(stateListener);
+   //}
    // @Override
-   // protected void onStop() {
+    //protected void onStop() {
        // super.onStop();
-       // if (stateListener != null){
-            //autenticacao.removeAuthStateListener(stateListener);
-        //}
+        //if (stateListener != null){
+          //  autenticacao.removeAuthStateListener(stateListener);
+      //  }
    // }
 
 
     private void entrar(){
         String email = etLogin.getText().toString();
         String senha = etSenha.getText().toString();
+
+
         if(!email.isEmpty())
             autenticacao.signInWithEmailAndPassword(email,senha)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
+
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (!task.isSuccessful()) {

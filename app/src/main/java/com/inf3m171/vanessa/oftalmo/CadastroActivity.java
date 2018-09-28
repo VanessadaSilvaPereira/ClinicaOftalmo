@@ -103,13 +103,13 @@ public class CadastroActivity extends AppCompatActivity {
 
 
 
-    private void criarMedico(){
+    private void criarMedico() {
         String senha = etSenha.getText().toString();
         String confirma = etConfirma.getText().toString();
         final String email = etEmail.getText().toString();
         String senhaAdmin = etSenhaAdmin.getText().toString();
 
-        if(!senha.isEmpty()&& senha.equals(confirma) && !email.isEmpty() && senhaAdmin.equals("123456")){
+        if (!senha.isEmpty() && senha.equals(confirma) && !email.isEmpty() && senhaAdmin.equals("123456")) {
             autenticacao = FirebaseAuth.getInstance();
 
             autenticacao.createUserWithEmailAndPassword(email, senha)
@@ -130,9 +130,10 @@ public class CadastroActivity extends AppCompatActivity {
                         }
                     });
 
-        }else{
+        } else {
             erro = "O campo e-mail deve ser preenchido e os campos de senha devem ser iguais!";
         }
+
         if(!erro.isEmpty()){
             AlertDialog.Builder alerta = new AlertDialog.Builder(this);
             alerta.setTitle("Atenção");
@@ -143,6 +144,7 @@ public class CadastroActivity extends AppCompatActivity {
         }
     }
     }
+
 
 
 

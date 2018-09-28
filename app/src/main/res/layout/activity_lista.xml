@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.inf3m171.vanessa.oftalmo.ListaActivity">
+    tools:context="com.inf3m171.vanessa.oftalmo.ListaActivity"
+    tools:showIn="@layout/activity_lista">>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ListaDeConsultas"
+        android:background="@android:color/black">
+
+    </ListView>
+
 
 </android.support.constraint.ConstraintLayout>
