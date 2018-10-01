@@ -6,15 +6,16 @@ package com.inf3m171.vanessa.oftalmo.model;
 
 public class Paciente {
 
-    private String id, nome;
+    private String id, nome, cpf;
 
 
     public Paciente() {
     }
 
-    public Paciente(String id, String nome) {
+    public Paciente(String id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
     }
 
     public String getId() {
@@ -31,5 +32,13 @@ public class Paciente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 }
