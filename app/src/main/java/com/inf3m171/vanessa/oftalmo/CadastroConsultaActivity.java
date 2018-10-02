@@ -47,12 +47,15 @@ public class CadastroConsultaActivity extends AppCompatActivity {
 
 
     private void cadastrarConsulta() {
+
+
         Consultas consulta = new Consultas();
 
 
         String medico = spMedico.getSelectedItem().toString();
         String hora = spHora.getSelectedItem().toString();
         String data = etData.getText().toString();
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         consulta.setMedico(medico);
         consulta.setData(data);

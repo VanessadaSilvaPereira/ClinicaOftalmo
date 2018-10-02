@@ -9,6 +9,14 @@
         <item>Rebeca</item>
     </string-array>
 
+    <string-array name="arrayPacientes">
+        <item>Selecione...</item>
+        <item>julia</item>
+        <item>Matheus</item>
+        <item>Andreza</item>
+        <item>Felipe</item>
+    </string-array>
+
     <string-array name="arrayHora">
         <item>Selecione...</item>
         <item>08:00</item>
