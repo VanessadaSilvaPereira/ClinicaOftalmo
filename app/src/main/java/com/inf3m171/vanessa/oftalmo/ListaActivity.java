@@ -73,10 +73,10 @@ public class ListaActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Consultas consulta = new Consultas();
                 consulta.setId(dataSnapshot.getKey());
-                consulta.setPaciente(dataSnapshot.child("paciente").getValue(Paciente.class));
-                consulta.setData(dataSnapshot.child("data").getValue(Date.class));
+                consulta.setPaciente(dataSnapshot.child("paciente").getValue(String.class));
+                consulta.setData(dataSnapshot.child("data").getValue(String.class));
                 consulta.setHora(dataSnapshot.child("hora").getValue(String.class));
-                consulta.setMedico(dataSnapshot.child("medico").getValue(Medico.class));
+                consulta.setMedico(dataSnapshot.child("medico").getValue(String.class));
 
                 listadeConsultas.add(consulta);
 

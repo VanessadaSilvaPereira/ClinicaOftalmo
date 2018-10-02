@@ -9,21 +9,31 @@ import java.util.Date;
 public class Consultas {
     private String id;
     private String hora;
-    private Medico medico;
-    private Paciente paciente;
-    private Date data;
+    private String medico;
+    private String paciente;
+    private String data;
+    //private String idPaciente;
 
 
     public Consultas() {
     }
 
-    public Consultas(String id, String hora, Medico medico, Paciente paciente, Date data) {
+    public Consultas(String id, String hora, String medico, String paciente, String data) {
         this.id = id;
         this.hora = hora;
         this.medico = medico;
         this.paciente = paciente;
         this.data = data;
+        //this.idPaciente = idPaciente;
     }
+
+   // public String getIdPaciente() {
+       // return idPaciente;
+    //}
+
+   // public void setIdPaciente(String idPaciente) {
+        //this.idPaciente = idPaciente;
+   // }
 
     public String getHora() {
         return hora;
@@ -33,27 +43,27 @@ public class Consultas {
         this.hora = hora;
     }
 
-    public Medico getMedico() {
+    public String getMedico() {
         return medico;
     }
 
-    public void setMedico(Medico medico) {
+    public void setMedico(String medico) {
         this.medico = medico;
     }
 
-    public Paciente getPaciente() {
+    public String getPaciente() {
         return paciente;
     }
 
-    public void setPaciente(Paciente paciente) {
+    public void setPaciente(String paciente) {
         this.paciente = paciente;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 
@@ -67,6 +77,6 @@ public class Consultas {
 
     @Override
     public String toString() {
-        return (paciente + "\n" + data + "\n" + hora + "\n" + medico);
+        return ( "Data: " + data + "\n" + "Hora: " +  hora + "\n"+ "Médico: " + medico);
     }
 }
