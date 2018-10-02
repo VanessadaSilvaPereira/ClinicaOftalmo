@@ -43,4 +43,10 @@ public class Medico {
     public void setId(String id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return (nome);
+    }
 }
+
